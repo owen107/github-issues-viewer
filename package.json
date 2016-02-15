@@ -1,0 +1,43 @@
+{
+  "name": "github-issues-viewer",
+  "version": "1.0.0",
+  "description": "New Issues Viewer for Github with React",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owen107/github-issues-viewer.git"
+  },
+  "author": "Jun Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owen107/github-issues-viewer/issues"
+  },
+  "homepage": "https://github.com/owen107/github-issues-viewer#readme",
+  "dependencies": {
+    "axios": "^0.9.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "compass-mixins": "^0.12.7",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "moment": "^2.11.2",
+    "node-sass": "^3.4.2",
+    "octicons": "^3.5.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
