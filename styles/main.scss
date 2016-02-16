@@ -1,5 +1,30 @@
-$color: yellow;
+$color: white;
+$fontColor: black;
 
 body {
 	background: $color;
+}
+
+h1 {
+	color: $fontColor;
+}
+
+.labels {
+	display: inline-block;
+	a {
+		display: inline-block;
+		padding: 0 3px;
+		text-decoration: none;
+		font-size: 12px;
+		vertical-align: 2px;
+	}
+}
+
+.issue-title {
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.summary {
+	font-size: 13px;
 }

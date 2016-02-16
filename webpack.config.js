@@ -21,30 +21,15 @@ module.exports = {
         test: /\.scss$/, 
         loader: "style!css!sass"
       },
-      {
+      { 
         test: /\.css$/, 
-        loader: "style-loader!css-loader"
+        loader: 'style!css'
       },
-      {
-        test   : /\.woff/,
-        loader : 'url?prefix=font/&limit=10000&mimetype=application/font-woff'
-      }, 
-      {
-        test   : /\.ttf/,
-        loader : 'file?prefix=font/'
-      }, 
-      {
-        test   : /\.eot/,
-        loader : 'file?prefix=font/'
-      }, 
-      {
-        test   : /\.svg/,
-        loader : 'file?prefix=font/'
+      { 
+        test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   },
   devServer: {
     contentBase: './'
