@@ -13,7 +13,6 @@ class IssuesList extends React.Component {
 			<ul className="list-group">
 			    {issues.map((issue, index) => {
 
-			    	const issueNumber = `#${issue.number}`;
 			    	const summary = GetShortSummary(issue.body, 140);
                     const duration = GetDuration(issue.created_at);
 
@@ -30,7 +29,7 @@ class IssuesList extends React.Component {
 			    		        <Link to={`/issues/${issue.number}`} style={{color: 'grey'}}>
 			    		          <span style={{position: 'absolute', right: 0, top: 0, fontSize: 14}}><Octicon name="comment" /> {issue.comments}</span>
 			    		        </Link>
-			    		        <p>{issueNumber} {issue.closed_at || 'Opened'} {duration} by <a href={issue.user.html_url}>{issue.user.login}</a></p>
+			    		        <p>{`#${issue.number}`} {issue.closed_at || 'Opened'} {duration} by <a href={issue.user.html_url}>{issue.user.login}</a></p>
 			    		        <span className="summary">{summary}</span>
 			    		    </div>
 			    		</li>

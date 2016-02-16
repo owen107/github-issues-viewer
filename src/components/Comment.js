@@ -1,6 +1,6 @@
 import React from 'react';
 import GetDuration from '../utils/TimeHelper';
-const marked = require('marked');
+import marked from 'marked';
 import ParseAtMention from '../utils/ParseHelper';
 
 const Comment = ({comments}) => {
