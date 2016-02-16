@@ -1,7 +1,9 @@
 import React from 'react';
-import moment from 'moment';
 import Label from './Label';
 import Octicon from 'react-octicon';
+import GetDuration from '../utils/TimeHelper';
+import ParseAtMention from '../utils/ParseHelper';
+const marked = require('marked');
 
 const IssueDetails = ({details}) => {
 
@@ -9,9 +11,8 @@ const IssueDetails = ({details}) => {
 		<div className="issue-details">
 		   {details.map((detail, index) => {
 
-		   	   const now = moment();
-    		   const createdAt = moment(detail.created_at, moment.ISO_8601);
-               const duration = moment.duration(now.diff(createdAt)).humanize();
+		   	   const duration = GetDuration(detail.created_at);
+		   	   const fullSummary = ParseAtMention(detail.body);
 
 		   	   return(
 		   	   	    <div className="container" key={index} style={{marginTop: 20}}>
@@ -25,11 +26,11 @@ const IssueDetails = ({details}) => {
 					    <div className="summary">
 					       <img src={detail.user.avatar_url} className="col-md-1" style={{width: 70}} />
 					       <div className="col-md-11 card" style={{paddingLeft: 0, paddingRight: 0}}>
-					          <h3 className="card-header">
-					             <a href={detail.user.html_url}></a> commented {duration}
-					          </h3>
+					          <h5 className="card-header">
+					             <a href={detail.user.html_url}>{detail.user.login}</a> commented {duration}
+					          </h5>
 					          <div className="card-block">
-					              <p>{detail.body}</p>
+					              <p dangerouslySetInnerHTML={{__html: marked(fullSummary)}}></p>
 					          </div>
 					       </div>
 					    </div>

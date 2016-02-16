@@ -1,14 +1,15 @@
 import React from 'react';
-import moment from 'moment';
+import GetDuration from '../utils/TimeHelper';
+const marked = require('marked');
+import ParseAtMention from '../utils/ParseHelper';
 
 const Comment = ({comments}) => {
 
 	return(
 		<div className="comments container">
 		    {comments.map((comment, index) => {
-		   	    const now = moment();
-	    	    const createdAt = moment(comment.created_at, moment.ISO_8601);
-	    	    const duration = moment.duration(now.diff(createdAt)).humanize();
+		   	    const duration = GetDuration(comment.created_at);
+		   	    const fullSummary = ParseAtMention(comment.body);
 
 		   	    return (
 			   	   	<div className="comment" key={index}>
@@ -18,7 +19,7 @@ const Comment = ({comments}) => {
 				             <a href={comment.user.html_url}>{comment.user.login}</a> commented {duration}
 				          </h5>
 				          <div className="card-block">
-				              <p>{comment.body}</p>
+				              <p dangerouslySetInnerHTML={{__html: marked(fullSummary)}}></p>
 				          </div>
 				       </div>
 				    </div>
