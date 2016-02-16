@@ -21,9 +21,8 @@ class Default extends React.Component {
 		  }.bind(this));
 	}
 	render() {
-		console.log('Data: ', this.state.issues);
 		return(
-			<div className="row">
+			<div className="row" style={{marginTop: 20}}>
 			   <IssuesList issues={this.state.issues} />
 			</div>
         );

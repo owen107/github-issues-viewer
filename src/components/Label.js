@@ -16,8 +16,4 @@ const Label = ({labels}) => {
 	);
 }
 
-Label.propTypes = {
-	labels: React.PropTypes.array.isRequired
-};
-
 export default Label;

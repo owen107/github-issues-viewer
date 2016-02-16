@@ -1,11 +1,13 @@
 import React from 'react';
 import GetIssueDetails from '../utils/DetailsHelper'
+import IssueDetails from '../components/IssueDetails';
+import Comment from '../components/Comment';
 
 class Details extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			details: {},
+			details: [],
 			comments: []
 		}
 	}
@@ -16,16 +18,17 @@ class Details extends React.Component {
 		GetIssueDetails(number)
 		  .then(function(data) {
 		  	  this.setState({
-		  	  	details: data.details,
+		  	  	details: [data.details],
 		  	  	comments: data.comments
 		  	  });
 		  }.bind(this));
 	}
 	render() {
-		console.log('Details: ', this.state.details);
-		console.log('Comments: ', this.state.comments);
 		return (
-			<h2></h2>
+			<div className="container">
+			  <IssueDetails details={this.state.details} />
+			  <Comment comments={this.state.comments} />
+			</div>
 		);
 	}
 }
