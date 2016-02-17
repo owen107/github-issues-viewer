@@ -13,9 +13,10 @@ const Label = ({labels}) => {
 		   	  
 		   	  const color = `#${label.color}`;
 		   	  const fontColor = color !== '#FFFFFF' ? 'white' : 'black';
+		   	  const labelUrl = `https://github.com/npm/npm/labels/${label.name}`;
 
 		   	  return(
-		   	  	 <a key={index} href={label.url} style={{background: color, color: fontColor}}>
+		   	  	 <a key={index} href={labelUrl} style={{background: color, color: fontColor}}>
 		   	  	   {label.name}
 		   	  	 </a>
 		   	  );
