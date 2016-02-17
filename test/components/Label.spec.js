@@ -31,7 +31,7 @@ describe('`Label` Component', () => {
 
   it('should includes correct label child component', () => {
      
-     const expected = '<a href="https://api.github.com/repos/npm/npm/labels/support" style={{background: \'#FF91AF\', borderRadius: 3, color: \'white\', marginRight: 5}} > support </a>';
+     const expected = '<a href="https://api.github.com/repos/npm/npm/labels/support" style={{background: \'#FF91AF\', color: \'white\'}} > support </a>';
      expect(result).toIncludeJSX(expected);
   });
 
