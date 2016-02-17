@@ -1,11 +1,11 @@
 # Github Issues Viewer
 This is a project for creating a Github Issues Viewer for NPM repos using ReactJS, ES6, Sass and Webpack.
 
-##Technologies used:
+##Technologies used
 
 - [React](http://facebook.github.io/react)
 - [ES6](https://github.com/rse/es6-features)
-- [Sass](http://sass-lang.com/) for css preprocessing
+- [Sass](http://sass-lang.com/)
 - [Webpack](https://webpack.github.io/)
 - [Octicons](https://octicons.github.com/)
 - [Babel](https://babeljs.io/)
@@ -18,13 +18,12 @@ This is a project for creating a Github Issues Viewer for NPM repos using ReactJ
 2. CD to the folder `cd github-issues-viewer`
 3. Run `npm-install` to install the project dependencies
 4. Run the start command `npm start` in the terminal
-6. Fire up your browser at `http://localhost:8080/#/`
+6. Fire up your browser at `http://localhost:8080/`
 
 ```
 npm install
 
 npm start
-
 ```
 
 ### Testing
