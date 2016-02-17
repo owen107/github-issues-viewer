@@ -19,7 +19,7 @@ class IssuesList extends React.Component {
 			    	return (
 			    		<li className="list-group-item row" key={index}>
 			    		    <div className="col-md-1">
-			    		       <img src={issue.user.avatar_url} style={{width: 60}} />
+			    		       <img src={issue.user.avatar_url} style={{width: 60}} alt="Avatar for User" />
 			    		    </div>
 			    		    <div className="col-md-11" style={{position: 'relative'}}>
 			    		        <Link to={`/issues/${issue.number}`} className="issue-title">

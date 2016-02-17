@@ -13,7 +13,7 @@ const Comment = ({comments}) => {
 
 		   	    return (
 			   	   	<div className="comment" key={index}>
-			   	   	   <img src={comment.user.avatar_url} className="col-md-1" style={{width: 70}} />
+			   	   	   <img src={comment.user.avatar_url} className="col-md-1" style={{width: 70}} alt="Avatar for User" />
 				       <div className="col-md-11 card" style={{paddingLeft: 0, paddingRight: 0}}>
 				          <h5 className="card-header">
 				             <a href={comment.user.html_url}>{comment.user.login}</a> commented {duration}

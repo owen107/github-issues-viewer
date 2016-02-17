@@ -4,7 +4,10 @@
   "description": "New Issues Viewer for Github with React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "mocha './test/**/*.spec.js' --compilers js:babel-core/register --require ignore-styles",
+    "test:watch": "npm test -- --watch",
+    "dev": "parallelshell 'npm run test:watch' 'npm run start'"
   },
   "repository": {
     "type": "git",
@@ -30,12 +33,18 @@
     "babel-preset-react": "^6.5.0",
     "compass-mixins": "^0.12.7",
     "css-loader": "^0.23.1",
+    "expect": "^1.14.0",
+    "expect-jsx": "^2.3.0",
     "file-loader": "^0.8.5",
+    "ignore-styles": "^1.2.0",
     "marked": "^0.3.5",
+    "mocha": "^2.4.5",
     "moment": "^2.11.2",
     "node-sass": "^3.4.2",
     "octicons": "^3.5.0",
+    "parallelshell": "^2.0.0",
     "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^0.14.7",
     "react-octicon": "^2.0.0",
     "react-paginate": "^0.5.4",
     "sass-loader": "^3.1.2",
