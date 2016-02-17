@@ -1,3 +1,8 @@
+//*****************************************************************
+//  Reusable component for displaying a list of labels in 
+//  both the issue default and details page
+//*****************************************************************
+
 import React from 'react';
 
 const Label = ({labels}) => {

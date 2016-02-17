@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Render the components and config routes
+//*****************************************************************
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, useRouterHistory } from 'react-router';

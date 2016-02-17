@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for details page, including IssueDetails and Comments
+//*****************************************************************
+
 import React from 'react';
 import GetIssueDetails from '../utils/DetailsHelper'
 import IssueDetails from '../components/IssueDetails';
@@ -12,6 +16,7 @@ class Details extends React.Component {
 		}
 	}
 	componentDidMount() {
+		// Initially request data for specific issue details and its comments
 		this.getIssueDetails(this.props.params.number);
 	}
 	getIssueDetails(number) {

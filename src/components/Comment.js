@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for displaying a list of comments for a single issue
+//*****************************************************************
+
 import React from 'react';
 import GetDuration from '../utils/TimeHelper';
 import marked from 'marked';
@@ -11,11 +15,12 @@ const Comment = ({comments}) => {
 		    {comments.map((comment, index) => {
 		   	    const duration = GetDuration(comment.created_at);
 		   	    const fullSummary = ParseAtMention(comment.body);
+		   	    const avatarName = `Avatar for @${comment.user.login}`;
 
 		   	    return (
 			   	   	<div className="issue-contents clearfix" key={index}>
 			   	   	   <div className="user-image">
-			   	   	      <img src={comment.user.avatar_url} alt="Avatar for User" />
+			   	   	      <img src={comment.user.avatar_url} alt={avatarName} />
 			   	   	   </div>
 				       <div className="contents">
 				          <div className="contents-header">

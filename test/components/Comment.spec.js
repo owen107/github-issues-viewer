@@ -31,7 +31,7 @@ describe('`Comment` Component', () => {
   });
 
   it('should include correct user avatar', () => {
-     const expected = <img src="https://avatars.githubusercontent.com/u/234659?v=3" alt="Avatar for User" />;
+     const expected = <img src="https://avatars.githubusercontent.com/u/234659?v=3" alt="Avatar for @owen107" />;
      expect(result).toIncludeJSX(expected);
   });
 

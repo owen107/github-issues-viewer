@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for displaying a issue item in details page
+//*****************************************************************
+
 import React from 'react';
 import Label from './Label';
 import Octicon from 'react-octicon';

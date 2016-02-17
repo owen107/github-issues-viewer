@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for displaying a single issue item in default page
+//*****************************************************************
+ 
 import React from 'react';
 import Label from './Label';
 import { Link } from 'react-router';
@@ -13,11 +17,12 @@ const IssuesList = ({issues}) => {
 
 		    	const summary = GetShortSummary(issue.body, 140);
                 const duration = GetDuration(issue.created_at);
+                const avatarName = `Avatar for @${issue.user.login}`;
 
 		    	return (
 		    		<li className="issue-item" key={index}>
 		    		    <div className="issue">
-		    		        <img src={issue.user.avatar_url} alt="Avatar for User" />
+		    		        <img src={issue.user.avatar_url} alt={avatarName} />
 		    		        <p>
 		    		           <a href={issue.user.html_url}>{issue.user.login}</a> opened an issue <span>{duration}</span>
 		    		        </p>

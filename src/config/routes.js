@@ -1,3 +1,7 @@
+//*****************************************************************
+//  React Router for configing the routes for the app
+//*****************************************************************
+
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import Main from '../pages/Main';

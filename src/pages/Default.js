@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for default page, including IssueList and Pagination
+//*****************************************************************
+
 import React from 'react';
 import IssuesList from '../components/IssuesList'
 import GetIssues from '../utils/IssuesHelper';
@@ -18,6 +22,7 @@ class Default extends React.Component {
 		}
 	}
 	componentDidMount() {
+		// Initially request API data 
 		this.getIssues(initialPageNum);
 	}
 	getIssues(pageNum) {
@@ -34,6 +39,7 @@ class Default extends React.Component {
 	handlePageClick(data) {
 		// Increment the page number for new data request
 		let page = data.selected + 1;
+		// Request new data based on the the new page number
 		this.getIssues(page);
 	}
 	render() {

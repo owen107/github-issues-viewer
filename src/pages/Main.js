@@ -1,3 +1,7 @@
+//*****************************************************************
+//  Component for main page, a basic structure for the app
+//*****************************************************************
+
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';

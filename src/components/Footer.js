@@ -1,3 +1,8 @@
+//*****************************************************************
+//  Component for displaying a common footer sharing across both
+//  the default and details pages
+//*****************************************************************
+
 import React from 'react';
 import Octicon from 'react-octicon';
 
