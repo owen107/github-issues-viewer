@@ -1,0 +1,88 @@
+@import '../base/variable.scss';
+@import '../base/utils.scss';
+
+.issue-details {
+	margin-top: 20px;
+}
+
+.container {
+	padding: 0px 3% 15px;
+
+	h2 {
+		color: $black;
+		margin-bottom: 5px;
+	}
+
+	p {
+		margin-top: 10px;
+		color: $grey;
+
+		.opened-label {
+			background: $green;
+			color: $white;
+			padding: 5px 5px;
+			border-radius: 3px;
+			text-transform: capitalize;
+			margin-right: 5px;
+		}
+
+		a {
+			text-decoration: none;
+			color: $blue;
+
+			&:hover {
+				color: darken($blue, 10);
+			}
+		}
+	}
+}
+
+.issue-contents {
+   padding: 2%;
+
+   .user-image {
+   	  float: left;
+   	  width: 10%;
+   	  margin-right: 5px;
+
+   	  img {
+	   	  border-radius: 4px;
+	   	  width: 66px;
+	   }
+   }
+
+   .contents {
+   	  float: left;
+   	  width: 83%;
+   	  border: 1px solid $lightGrey;
+   	  border-radius: 3px;
+
+   	  .contents-header {
+        border-bottom: 1px solid $lightGrey;
+        background: $lightGrey;
+        padding: 15px 20px;
+        color: darken($grey, 10);
+        font-size: 14px;
+
+        a {
+        	text-decoration: none;
+			color: $blue;
+
+			&:hover {
+				color: darken($blue, 10);
+			}
+        }
+   	  }
+
+   	  .contents-block {
+   	  	padding: 4%;
+   	  	overflow: auto;
+   	  	p {
+   	  		color: $black;
+   	  	}
+   	  }
+   }
+}
+
+
+

@@ -3,9 +3,9 @@ import IssuesList from '../components/IssuesList'
 import GetIssues from '../utils/IssuesHelper';
 import GetTotalPageNumber from '../utils/PagesHelper';
 import ReactPaginate from 'react-paginate';
-import '../../styles/main.scss';
+import '../../styles/components/pagination.scss';
 
-const initialPageNum = 1;
+const initialPageNum = 1
 
 class Default extends React.Component {
 	constructor(props) {
@@ -13,6 +13,8 @@ class Default extends React.Component {
 		this.state = {
 			issues: [],
 			totalPage: 0,
+			previousLabel: '',
+			nextLabel: ''
 		}
 	}
 	componentDidMount() {
@@ -23,7 +25,9 @@ class Default extends React.Component {
 		  .then(function(data) {
 		  	  this.setState({
 		  	  	issues: data.issues,
-		  	  	totalPage: GetTotalPageNumber(data.link)
+		  	  	totalPage: GetTotalPageNumber(data.link),
+		  	  	previousLabel: 'Previous',
+		  	  	nextLabel: 'Next'
 		  	  });
 		  }.bind(this));
 	}
@@ -33,27 +37,28 @@ class Default extends React.Component {
 		this.getIssues(page);
 	}
 	render() {
-		const width = 55 + '%';
 		return(
-			<div className="row" style={{marginTop: 20}}>
+			<div className="wrapper">
 			   <IssuesList issues={this.state.issues} />
-			   <div className="pagination-section" style={{width: width, marginLeft: 'auto', marginRight: 'auto'}}>
-				   <ReactPaginate previousLabel={"Previous"}
-	                   nextLabel={"Next"}
-	                   breakLabel={<li className="page-item disabled"><a className="page-link">...</a></li>}
-	                   pageNum={this.state.totalPage}
-	                   marginPagesDisplayed={2}
-	                   pageRangeDisplayed={5}
-	                   clickCallback={(data) => this.handlePageClick(data)}
-	                   containerClassName={"pagination"}
-	                   subContainerClassName={"pagination"}
-	                   pageClassName={"page-item"}
-	                   pageLinkClassName={"page-link"}
-	                   previousLinkClassName={"page-link"}
-	                   previousClassName={"page-item"}
-	                   nextClassName={"page-item"}
-	                   nextLinkClassName={"page-link"}
-	                   activeClassName={"active"} />
+			   <div className="pagination-section">
+			       <div className="container">
+					   <ReactPaginate previousLabel={this.state.previousLabel}
+		                   nextLabel={this.state.nextLabel}
+		                   breakLabel={<li className="page-item disabled"><a className="page-link">...</a></li>}
+		                   pageNum={this.state.totalPage}
+		                   marginPagesDisplayed={2}
+		                   pageRangeDisplayed={5}
+		                   clickCallback={(data) => this.handlePageClick(data)}
+		                   containerClassName={"pagination"}
+		                   subContainerClassName={"sub-pagination"}
+		                   pageClassName={"page-item"}
+		                   pageLinkClassName={"page-link"}
+		                   previousLinkClassName={"page-link"}
+		                   previousClassName={"page-item"}
+		                   nextClassName={"page-item"}
+		                   nextLinkClassName={"page-link"}
+		                   activeClassName={"active"} />
+	               </div>
                </div>
 			</div>
 

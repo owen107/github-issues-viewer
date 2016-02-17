@@ -1,0 +1,29 @@
+@import "../base/variable.scss";
+
+.main-header, .main-footer {
+  text-align: center;
+}
+
+.main-header {
+  border-bottom: 1px solid $lightGrey;
+  h2 {
+    a.navbar-brand {
+      text-decoration: none;
+      margin-left: 15px;
+      color: $black;
+    }
+  }
+}
+
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main-footer {
+  border-top: 1px solid $lightGrey;
+  p {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+}

@@ -4,33 +4,38 @@ import { Link } from 'react-router';
 import GetShortSummary from '../utils/SummaryHelper';
 import GetDuration from '../utils/TimeHelper';
 import Octicon from 'react-octicon';
+import "../../styles/components/IssuesList.scss";
 
 class IssuesList extends React.Component {
 	render() {
 		const { issues } = this.props;
 
 		return (
-			<ul className="list-group">
+			<ul className="issue-list">
 			    {issues.map((issue, index) => {
 
 			    	const summary = GetShortSummary(issue.body, 140);
                     const duration = GetDuration(issue.created_at);
 
 			    	return (
-			    		<li className="list-group-item row" key={index}>
-			    		    <div className="col-md-1">
-			    		       <img src={issue.user.avatar_url} style={{width: 60}} alt="Avatar for User" />
+			    		<li className="issue-item" key={index}>
+			    		    <div className="issue">
+			    		        <img src={issue.user.avatar_url} alt="Avatar for User" />
+			    		        <p>
+			    		           <a href={issue.user.html_url}>{issue.user.login}</a> opened an issue <span>{duration}</span>
+			    		        </p>
+			    		        <Link to={`/issues/${issue.number}`} className="comments-number">
+			    		          <span><Octicon name="comment" /> {issue.comments}</span>
+			    		        </Link>
 			    		    </div>
-			    		    <div className="col-md-11" style={{position: 'relative'}}>
+			    		    <div className="issue-content">
 			    		        <Link to={`/issues/${issue.number}`} className="issue-title">
-			    		           <h5 style={{marginBottom: 0}}>{issue.title}</h5>
+			    		            <h5>
+			    		               {`#${issue.number}`} - {issue.title}
+			    		            </h5>
 			    		        </Link>
-			    		        <Label labels={issue.labels} />
-			    		        <Link to={`/issues/${issue.number}`} style={{color: 'grey'}}>
-			    		          <span style={{position: 'absolute', right: 0, top: 0, fontSize: 14}}><Octicon name="comment" /> {issue.comments}</span>
-			    		        </Link>
-			    		        <p>{`#${issue.number}`} {issue.closed_at || 'Opened'} {duration} by <a href={issue.user.html_url}>{issue.user.login}</a></p>
-			    		        <span className="summary">{summary}</span>
+			    		        <Label labels={issue.labels} /> 
+			    		        <p className="issue-short-summary">{summary}</p>
 			    		    </div>
 			    		</li>
 			    	);

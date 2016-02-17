@@ -4,6 +4,7 @@ import Octicon from 'react-octicon';
 import GetDuration from '../utils/TimeHelper';
 import ParseAtMention from '../utils/ParseHelper';
 import marked from 'marked';
+import '../../styles/components/issueDetails.scss';
 
 const IssueDetails = ({details}) => {
 
@@ -15,21 +16,23 @@ const IssueDetails = ({details}) => {
 		   	   const fullSummary = ParseAtMention(detail.body);
 
 		   	   return(
-		   	   	    <div className="container" key={index} style={{marginTop: 20}}>
-		   	   	        <h2><span>{`#${detail.number}`}</span> {detail.title}</h2>
+		   	   	    <div className="container" key={index}>
+		   	   	        <h2>{`#${detail.number}`} - {detail.title}</h2>
 					    <p>
-					      <span className="label label-success" style={{textTransform: 'capitalize', marginRight: 10}}><Octicon name="info" /> {detail.state}</span>
-					      <a href={detail.user.html_url}>{detail.user.login}</a> opened this issue {duration} - {detail.comments} comments 
+					      <span className="opened-label"><Octicon name="info" /> {detail.state}</span>
+					      <a href={detail.user.html_url}>{detail.user.login}</a> opened this issue {duration} ({detail.comments} comments) 
 					      <Label labels={detail.labels} />
 					    </p>
 					    <hr />
-					    <div className="summary">
-					       <img src={detail.user.avatar_url} className="col-md-1" style={{width: 70}} alt="Avatar for User" />
-					       <div className="col-md-11 card" style={{paddingLeft: 0, paddingRight: 0}}>
-					          <h5 className="card-header">
-					             <a href={detail.user.html_url}>{detail.user.login}</a> commented {duration}
-					          </h5>
-					          <div className="card-block">
+					    <div className="issue-contents clearfix">
+					       <div className="user-image">
+					          <img src={detail.user.avatar_url} alt="Avatar for User" />
+					       </div>
+					       <div className="contents">
+					          <div className="contents-header">
+					             <a href={detail.user.html_url}>{detail.user.login}</a> added a comment {duration}
+					          </div>
+					          <div className="contents-block">
 					              <p dangerouslySetInnerHTML={{__html: marked(fullSummary)}}></p>
 					          </div>
 					       </div>

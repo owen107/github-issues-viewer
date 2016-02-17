@@ -1,0 +1,95 @@
+@import '../base/variable.scss';
+@import 'label.scss';
+
+.wrapper {
+	margin-top: 20px;
+}
+
+.issue-list {
+	list-style: none;
+}
+
+.issue-item {
+	padding: 20px 5% 25px;
+	border-bottom: 1px dotted $lightGrey;
+}
+
+.issue {
+	position: relative;
+
+	img, p, span {
+		display: inline-block;
+	}
+
+	img {
+		width: 25px;
+		border-radius: 3px;
+	}
+
+	p {
+		vertical-align: top;
+		margin: 2px 0 0 10px;
+		font-size: 16px;
+		color: lighten($grey, 10);
+
+		a {
+			display: inline-block;
+			margin-right: 3px;
+			text-decoration: none;
+			color: $blue;
+
+			&:hover {
+				color: darken($blue, 10);
+			}
+		}
+
+		span {
+			margin-left: 3px;
+		}
+	}
+
+	.comments-number {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: $blue;
+
+		&:hover {
+			color: darken($blue, 10);
+		}
+
+		span {
+		   margin-left: 2px;
+		   font-size: 13px;
+		}
+	}
+}
+
+.issue-content {
+	background: lighten($lightGrey, 2);
+	padding: 15px 30px;
+	margin-top: 5px;
+	border-radius: 5px;
+}
+
+.issue-title {
+	text-decoration: none;
+	color: lighten($black, 5);
+	font-size: 24px;
+
+	&:hover {
+		color: darken($black, 10);
+		text-decoration: underline;
+	}
+
+	h5 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.issue-short-summary {
+	color: lighten($black, 20);
+	font-size: 15px;
+	margin-bottom: 0;
+}

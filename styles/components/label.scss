@@ -1,0 +1,12 @@
+@import '../base/variable.scss';
+
+.labels {
+	a {
+		display: inline-block;
+		padding: 2px 4px;
+		border-radius: 2px;
+		text-decoration: none;
+		font-size: 12px;
+		margin-left: 4px;
+	}
+}

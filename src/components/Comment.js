@@ -2,23 +2,26 @@ import React from 'react';
 import GetDuration from '../utils/TimeHelper';
 import marked from 'marked';
 import ParseAtMention from '../utils/ParseHelper';
+import '../../styles/components/issueDetails.scss';
 
 const Comment = ({comments}) => {
 
 	return(
-		<div className="comments container">
+		<div className="container">
 		    {comments.map((comment, index) => {
 		   	    const duration = GetDuration(comment.created_at);
 		   	    const fullSummary = ParseAtMention(comment.body);
 
 		   	    return (
-			   	   	<div className="comment" key={index}>
-			   	   	   <img src={comment.user.avatar_url} className="col-md-1" style={{width: 70}} alt="Avatar for User" />
-				       <div className="col-md-11 card" style={{paddingLeft: 0, paddingRight: 0}}>
-				          <h5 className="card-header">
-				             <a href={comment.user.html_url}>{comment.user.login}</a> commented {duration}
-				          </h5>
-				          <div className="card-block">
+			   	   	<div className="issue-contents clearfix" key={index}>
+			   	   	   <div className="user-image">
+			   	   	      <img src={comment.user.avatar_url} alt="Avatar for User" />
+			   	   	   </div>
+				       <div className="contents">
+				          <div className="contents-header">
+				             <a href={comment.user.html_url}>{comment.user.login}</a> added a comment {duration}
+				          </div>
+				          <div className="contents-block">
 				              <p dangerouslySetInnerHTML={{__html: marked(fullSummary)}}></p>
 				          </div>
 				       </div>
